@@ -7,7 +7,7 @@ const foodSchema = new mongoose.Schema({
   }
 });
 
-const userSchema = mongoose.Schema({
+const userSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
@@ -16,7 +16,7 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  pantry: [foodSchema],
+  foods: [foodSchema],
   assignee: {
     type: mongoose.Schema.ObjectId,
     ref: "User",
